@@ -9,6 +9,7 @@ const int potentiometerPin = 0;      // the number of the potentiometer pin
 
 int ledsState[8] = {0,0,0,0,0,0,0,0}; //Current LEDs that are HIGH
 int potentiometerRead;
+int pointer = 0;
 
 void setup() {
   for (int i = 0; i < 8; i++) {
@@ -26,10 +27,10 @@ void setup() {
 }
 
 void loop() {
-  buttonValue1 = analogRead(buttonPin1);
+  potentiometerRead = analogRead(potentiometerPin);
   
 
-  for (int i = 0;  i <= 7; i++) {
+  for (int i = 0;  i < 8; i++) {
 
     Serial.println(ledsState[i]); //Prints led state
     if (!ledsState[i] && !buttonValue1) {
