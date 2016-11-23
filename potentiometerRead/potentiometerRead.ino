@@ -4,7 +4,7 @@
 
 // constants won't change. They're used here to
 // set pin numbers:
-int ledPins[8] {4,5,6,7,8,9,10,11};      // the number of the LED pin
+int ledPins[8]; //= {4,5,6,7,8,9,10,11};      // the number of the LED pin
 const int potentiometerPin = 0;      // the number of the potentiometer pin
 
 int ledsState[8] = {0,0,0,0,0,0,0,0}; //Current LEDs that are HIGH
@@ -21,8 +21,7 @@ void setup() {
     pinMode(ledPins[i], OUTPUT);
   }
   // initialize the button pins as an input pullup:
-  pinMode(buttonPin1, INPUT_PULLUP);
-  pinMode(buttonPin2, INPUT_PULLUP);
+  pinMode(potentiometerPin, INPUT);
   Serial.begin(9600);
 }
 
